@@ -1,0 +1,14 @@
+// backup of previous script.js
+
+const sobre = document.getElementById("sobre");
+const carta = document.getElementById("carta");
+const abrirBtn = document.getElementById("abrir");
+const musica = document.getElementById("musica");
+const musicaBtn = document.getElementById("musicaBtn");
+const hearts = document.getElementById("hearts");
+const texto = document.getElementById("texto");
+
+let abierto = false;
+let musicaActiva = false;
+
+/* original script content omitted */

@@ -1,0 +1,91 @@
+/* Reset & base */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Poppins',sans-serif;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,#ffe6f0 0%,#ffdbe8 40%,#f9c9d9 100%);
+  padding:20px;
+}
+
+/* Decorative layers */
+.background{position:fixed;inset:0;z-index:-3;background:
+  radial-gradient(circle at 20% 20%,rgba(255,255,255,.35),transparent 35%),
+  radial-gradient(circle at 80% 80%,rgba(255,255,255,.25),transparent 30%)}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:-2}
+
+/* Container that clips envelope initially */
+.contenedor{
+  position:relative;
+  width:min(360px,94vw);
+  max-width:360px;
+  height:220px;
+  overflow:hidden; /* hides carta at start */
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  margin:auto;
+}
+
+/* Envelope */
+.sobre{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:100%;
+  max-width:340px;
+  height:210px;
+  cursor:pointer;
+  transition: transform .7s ease, opacity .5s ease;
+  z-index:60; /* envelope above card initially */
+  perspective:800px;
+}
+.cuerpo{position:absolute;bottom:0;width:100%;height:100%;background:#f2d3a0;border-radius:0 0 12px 12px;box-shadow:0 18px 30px rgba(0,0,0,.18)}
+.cuerpo::before,.cuerpo::after{content:"";position:absolute;top:0;width:0;height:0}
+.cuerpo::before{left:0;border-left:50% solid #e7bf82;border-top:52px solid transparent;border-bottom:52px solid transparent}
+.cuerpo::after{right:0;border-right:50% solid #d9ae6b;border-top:52px solid transparent;border-bottom:52px solid transparent}
+
+/* flap */
+.tapa{position:absolute;left:50%;top:-4px;transform:translateX(-50%);width:0;height:0;border-left:50% solid transparent;border-right:50% solid transparent;border-top:120px solid #d49d54;transform-origin:top;transition:transform .9s cubic-bezier(.2,.9,.3,1);z-index:80}
+
+/* envelope message */
+.mensajeAbrir{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;z-index:90;pointer-events:none}
+.mensajeAbrir h2{font-size:36px}
+.mensajeAbrir p{margin-top:8px;font-weight:600}
+
+/* Card (hidden under envelope initially) */
+.carta{position:absolute;left:50%;bottom:30px;transform:translate(-50%,140%);opacity:0;width:calc(100% - 40px);max-width:320px;height:360px;transition:transform .85s cubic-bezier(.2,.9,.3,1),opacity .45s ease,box-shadow .3s;z-index:10}
+
+/* Paper inside card */
+.papel{width:100%;height:100%;background:#fffdf8;border-radius:8px;padding:36px 28px;box-shadow:0 14px 34px rgba(0,0,0,.18);position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.06)}
+.papel::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent,transparent 28px,rgba(0,0,0,.03) 30px);pointer-events:none}
+
+/* Typography */
+h1{font-family:'Great Vibes',cursive;text-align:center;font-size:40px;color:#c03d67;margin-bottom:20px}
+#texto{white-space:normal;line-height:1.8;color:#555;font-size:16px;text-align:center;margin:6px auto 18px;max-width:88%;word-wrap:break-word;hyphens:auto}
+.firma{text-align:right;font-family:'Great Vibes',cursive;font-size:30px;color:#b04a63;margin-top:26px}
+
+/* Buttons */
+.botones{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;display:flex;gap:12px;z-index:120}
+button{border:none;background:#d85b84;color:#fff;padding:10px 18px;border-radius:28px;cursor:pointer;font-size:14px;box-shadow:0 8px 20px rgba(0,0,0,.14)}
+button:hover{transform:translateY(-3px);background:#c33c68}
+
+/* OPEN STATES: when opening, lower envelope z-index and bring card up smoothly */
+.sobre.open .tapa{transform:rotateX(180deg)}
+.sobre.open{z-index:20} /* envelope behind the rising card */
+.contenedor.open{overflow:visible} /* allow card to protrude */
+.carta.open{transform:translate(-50%,30px);opacity:1;z-index:110;box-shadow:0 28px 60px rgba(0,0,0,.28)}
+
+/* After card fully visible: slide envelope aside and fade */
+.sobre.away{transform:translateX(-140%) translateY(-8px) scale(.96);opacity:0;pointer-events:none;transition:transform .8s cubic-bezier(.2,.9,.3,1),opacity .6s}
+.carta.open .papel{overflow:auto} /* allow internal scroll when open */
+
+/* Mobile tweaks */
+@media(max-width:420px){
+  .contenedor{height:200px}
+  .carta{height:330px}
+  h1{font-size:34px}
+  #texto{font-size:14px;max-width:92%}
+  .tapa{border-top:100px solid #d49d54}
+}
