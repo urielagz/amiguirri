@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Cumpleaños ❤️</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Música -->
+
+    <audio id="musica" loop>
+
+        <source src="musica.mp3" type="audio/mpeg">
+
+    </audio>
+
+    <!-- Corazones -->
+
+    <div id="hearts"></div>
+
+    <!-- Fondo -->
+
+    <div class="background"></div>
+
+    <!-- Sobre -->
+
+    <section class="contenedor">
+
+        <div class="sobre" id="sobre">
+
+            <div class="tapa"></div>
+
+            <div class="cuerpo"></div>
+
+            <div class="mensajeAbrir">
+
+                <h2>💌</h2>
+
+                <p>Haz clic para abrir</p>
+
+            </div>
+
+        </div>
+
+        <!-- Carta -->
+
+        <div class="carta" id="carta">
+
+            <div class="papel">
+
+                <h1>
+                    Feliz Cumpleaños ❤️
+                </h1>
+
+                <p id="texto">
+
+                    Hoy quiero regalarte algo más que unas palabras.
+
+                    Quiero regalarte un pequeño pedacito de mi corazón.
+
+                    Gracias por existir, por hacer sonreír a quienes te rodean
+                    y por convertir los días normales en recuerdos especiales.
+
+                    Espero que este nuevo año de vida esté lleno de aventuras,
+                    metas cumplidas, mucha salud y muchísimo amor.
+
+                    Nunca olvides lo increíble que eres.
+
+                    Eres una persona maravillosa y deseo que siempre tengas
+                    razones para sonreír.
+
+                    Que cada deseo que pidas hoy se haga realidad.
+
+                    Feliz cumpleaños.
+
+                    ❤️
+
+                </p>
+
+                <div class="firma">
+
+                    Con mucho cariño ❤️
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Botones -->
+
+    <div class="botones">
+
+        <button id="abrir">
+
+            Abrir Carta 💌
+
+        </button>
+
+        <button id="musicaBtn">
+
+            🎵 Música
+
+        </button>
+
+    </div>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

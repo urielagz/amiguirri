@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feliz Cumpleaños</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="hearts" aria-hidden="true"></div>
+    <div class="background" aria-hidden="true"></div>
+
+    <main class="wrap">
+        <section class="contenedor" aria-label="Carta sorpresa">
+
+            <div class="sobre" id="sobre" role="button" tabindex="0" aria-pressed="false" aria-label="Abrir carta">
+                <div class="tapa" aria-hidden="true"></div>
+                <div class="cuerpo" aria-hidden="true"></div>
+                <div class="mensajeAbrir">
+                    <h2>💌</h2>
+                    <p>Haz clic para abrir</p>
+                </div>
+            </div>
+
+            <article class="carta" id="carta" aria-hidden="true">
+                <div class="papel">
+                    <h1>Feliz Cumpleaños ❤️</h1>
+                    <p id="texto"><!-- El mensaje se escribirá aquí --></p>
+                    <div class="firma">Con mucho cariño ❤️</div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="botones">
+        <button id="abrir">Abrir Carta 💌</button>
+        <button id="musicaBtn">🎵 Música</button>
+        <button id="shareBtn">📲 Compartir</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
